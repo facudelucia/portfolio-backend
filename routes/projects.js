@@ -22,7 +22,7 @@ router.get("/", async(req, res)=>{
   }
 })
 router.put("/:projectId", async (req, res, next) => {
-    const { title, description, link, github, image } = req.body;
+    const { title, description, downloadLink, github, image } = req.body;
     const newProject = {};
     
     if(title) {
@@ -37,8 +37,8 @@ router.put("/:projectId", async (req, res, next) => {
     if(image) {
         newProject.image = image;
     }
-    if(link) {
-        newProject.link = link;
+    if(downloadLink) {
+        newProject.link = downloadLink;
     }
 
     try {
